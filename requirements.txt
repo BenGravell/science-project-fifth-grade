@@ -1,0 +1,7 @@
+numpy
+pandas
+pydantic
+scikit-learn
+interpret
+plotly
+marimo
