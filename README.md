@@ -8,18 +8,26 @@ I found this project while digging around an old bankers box. I transcribed the 
 
 ## Usage
 
-Run
+### Deployed web app
 
-```sh
-marimo run science.py
-```
+[![marimo](https://marimo.io/shield.svg)](https://falling-wave-8700.ploomberapp.io/)
 
-## Setup
+### Local app
+
+#### Setup
 
 Create and activate a [`venv`](https://docs.python.org/3/library/venv.html). Then run
 
 ```sh
 pip install -r requirements.txt
+```
+
+#### Run
+
+Run
+
+```sh
+marimo run science.py
 ```
 
 ## Preview
