@@ -105,7 +105,7 @@ def __(Path, df, dropdowns, enum_classes, enum_names, mo, np):
         for dropdown, enum_class in zip(dropdowns, enum_classes)
     ]
     image_filename = "".join([str(int(v)) for v in selection_values]) + ".jpg"
-    image_path = Path("assets/images") / image_filename
+    image_path = Path("assets/car_images") / image_filename
 
     if image_path.is_file():
         selected_image = mo.image(
