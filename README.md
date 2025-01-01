@@ -24,8 +24,6 @@ pip install -r requirements.txt
 
 #### Run
 
-Run
-
 ```sh
 marimo run science.py
 ```
