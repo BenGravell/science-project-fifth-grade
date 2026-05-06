@@ -1,11 +1,11 @@
 import marimo
 
-__generated_with = "0.6.24"
+__generated_with = "0.23.5"
 app = marimo.App(width="full", app_title="Science")
 
 
 @app.cell
-def __():
+def _():
     from enum import IntEnum
     from pathlib import Path
 
@@ -33,7 +33,7 @@ def __():
 
 
 @app.cell
-def __(IntEnum, TrialData):
+def _(IntEnum, TrialData):
     def convert_data(data):
 
         def convert_field_value(field):
@@ -56,7 +56,7 @@ def __(IntEnum, TrialData):
 
 
 @app.cell
-def __(TrialData, convert_data, pd):
+def _(TrialData, convert_data, pd):
     # Load raw pandas DataFrame from csv
     raw_df = pd.read_csv("data/data.csv").sort_values(
         by="average_time_to_finish_sec", ascending=True
@@ -67,11 +67,11 @@ def __(TrialData, convert_data, pd):
     ]
     # Re-convert to Pandas DataFrame
     df = pd.DataFrame(trial_datas)
-    return df, raw_df, trial_datas
+    return (df,)
 
 
 @app.cell
-def __(df, mo):
+def _(df, mo):
     mo.vstack(
         [
             mo.center(mo.md("# All Cars")),
@@ -82,7 +82,7 @@ def __(df, mo):
 
 
 @app.cell
-def __(df, mo):
+def _(df, mo):
     # Find the best trial
     mo.callout(
         mo.vstack(
@@ -99,7 +99,7 @@ def __(df, mo):
 
 
 @app.cell
-def __(Path, df, dropdowns, enum_classes, enum_names, mo, np):
+def _(Path, df, dropdowns, enum_classes, enum_names, mo, np):
     selection_values = [
         enum_class[dropdown.value]
         for dropdown, enum_class in zip(dropdowns, enum_classes)
@@ -136,20 +136,11 @@ def __(Path, df, dropdowns, enum_classes, enum_names, mo, np):
             selected_table,
         ]
     )
-    return (
-        image_filename,
-        image_path,
-        mask,
-        selected_cimage,
-        selected_df,
-        selected_image,
-        selected_table,
-        selection_values,
-    )
+    return
 
 
 @app.cell
-def __(df, px):
+def _(df, px):
     px.parallel_categories(
         df,
         color="Average Time To Finish (sec)",
@@ -160,7 +151,7 @@ def __(df, px):
 
 
 @app.cell
-def __(ExplainableBoostingRegressor, df):
+def _(ExplainableBoostingRegressor, df):
     # Define features and label
     X = df[["Chassis Length", "Wheel Size", "Body Style"]]
     y = df["Average Time To Finish (sec)"]
@@ -170,11 +161,11 @@ def __(ExplainableBoostingRegressor, df):
     model = ExplainableBoostingRegressor()
     model.fit(X, y)
     model.explain_global().visualize()
-    return X, model, y
+    return
 
 
 @app.cell
-def __(BodyStyle, ChassisLength, WheelSize, mo):
+def _(BodyStyle, ChassisLength, WheelSize, mo):
     enum_classes = [ChassisLength, WheelSize, BodyStyle]
     enum_names = ["Chassis Length", "Wheel Size", "Body Style"]
 
@@ -193,36 +184,22 @@ def __(BodyStyle, ChassisLength, WheelSize, mo):
 
 
 @app.cell
-def __(mo):
+def _(mo):
     mo.vstack(
         [
-            mo.center(
-                mo.md(
-                    """
+            mo.center(mo.md("""
     # BONUS: `30 Sound.mp3`
 
     *An mp3 from the nascent internet of the early 2000s.*
-    """
-                )
-            ),
+    """)),
             mo.center(mo.audio(src="assets/tunes/30 Sound.mp3")),
-            mo.center(
-                mo.md(
-                    """
+            mo.center(mo.md("""
     I have very little information regarding this file. My recollection is that I visited a website that contained a raw `.mid` file, and I recorded the streaming audio output from Windows Media Player to generate the `.mp3` file. It was located adjacent to the science project files in my filesystem, and I couldn't resist including it.
 
     The actual name of the song is ["Pennsylvania 6-5000"](https://en.wikipedia.org/wiki/Pennsylvania_6-5000_(song)). An original recording can be found on [YouTube](https://youtu.be/AGOUldTrk-A?si=eIwp5FEYq_n-xY2r).
-    """
-                )
-            ),
+    """)),
         ]
     )
-
-    return
-
-
-@app.cell
-def __():
     return
 
 
