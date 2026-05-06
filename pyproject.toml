@@ -1,0 +1,14 @@
+[project]
+name = "science-project-fifth-grade"
+version = "0.1.0"
+description = "Fifth grade science project revamped for modern data science"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy",
+    "pandas",
+    "pydantic",
+    "interpret",
+    "plotly",
+    "marimo",
+]
+

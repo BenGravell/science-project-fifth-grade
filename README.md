@@ -4,28 +4,22 @@
 
 My science project from fifth grade (2004), revamped for modern data science 20 years later (2024).
 
-I found this project while digging around an old bankers box. I transcribed the data and set up a modern data science-y exploration as a single [Marimo](https://marimo.io/) notebook. There are only a handful of examples, but it's fun to poke around a dataset I personally harvested as a kid at a time when I knew almost nothing about math, science, engineering, and software.
+I found this project while digging around an old bankers box.
+I transcribed the data and set up a modern data science exploration as a single [Marimo](https://marimo.io/) notebook.
+There are only a handful of examples, but it's fun to poke around a dataset I personally harvested as a kid at a time when I knew almost nothing about math, science, engineering, and software.
 
-## Usage
+## Web
 
-### Deployed web app
+[![marimo](https://marimo.io/shield.svg)](https://bengravell.github.io/science-project-fifth-grade/)
 
-[![marimo](https://marimo.io/shield.svg)](https://falling-wave-8700.ploomberapp.io/)
+The notebook is automatically exported and deployed to GitHub Pages on every push to `main`.
 
-### Local app
+## Local
 
-#### Setup
-
-Create and activate a [`venv`](https://docs.python.org/3/library/venv.html). Then run
-
-```sh
-pip install -r requirements.txt
-```
-
-#### Run
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/) then run
 
 ```sh
-marimo run science.py
+uv run marimo run science.py
 ```
 
 ## Preview
@@ -73,7 +67,7 @@ To perform this experiment you will need:
 
 7. Now test each combination 7 times and average them, to get more accurate results, and record the data on the data table.
 
-8. Compare the results and find the differences.  
+8. Compare the results and find the differences.
 
 ## Bibliography
 

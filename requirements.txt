@@ -1,6 +1,0 @@
-numpy
-pandas
-pydantic
-interpret
-plotly
-marimo
